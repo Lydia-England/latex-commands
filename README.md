@@ -14,6 +14,9 @@ LaTeX commands I've defined or re-defined
 - Schrodinger Equation shorthand
 - Expectation value (langle/rangle) shorthand
 
+## float-cmd
+- Change Figure Caption to "Fig."
+
 ## two-slit-img
 
 

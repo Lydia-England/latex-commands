@@ -1,0 +1,43 @@
+%--------------------------------------
+%---- TITLE PAGE ----------------------
+%--------------------------------------
+
+%--- subtitle in title page ---%
+\newcommand{\subtitle}[1]{%
+  \posttitle{%
+    \par\end{center}
+    \begin{center}\large#1\end{center}
+    \vskip0.5em}%
+}
+
+
+%--------------------------------------
+%---- LINE SPACING ETC ----------------
+%--------------------------------------
+\setlength{\parindent}{0pt}     % universal no indent
+\setlength{\parskip}{0.5em}       % paragraph skip
+\renewcommand{\arraystretch}{1.5}   % cell padding
+
+
+%--------------------------------------
+%---- SHORTHAND -----------------------
+%--------------------------------------
+
+% cmd: \lp( for left parentheses
+\newcommand{\lp}{\left}  
+
+% cmd: \rp( for right parentheses
+\newcommand{\rp}{\right}
+
+% cmd: \SE for "Schrodinger Equation" with umlaut o
+\newcommand{\SE}{Schr\"{o}dinger Equation}
+
+% cmd: \pd for partial derivative symbol
+\newcommand{\pd}{\partial}
+
+% cmd: \bksh for backslash in text "\"
+\newcommand{\bksh}{\textbackslash}
+
+% cmd: \ev{x} for \langle x \rangle, etc. 
+\newcommand{\ev}[1]{\langle {#1} \rangle}
+

@@ -1,0 +1,33 @@
+%============================================%
+%==== COLORS ================================%
+%============================================%
+\colorlet{MyGreen}{green!40!black}      % forest green
+\definecolor{dgreen}{rgb}{0.,0.6,0.}    % dark green color
+\definecolor{light-gray}{gray}{0.9}     % for 'manual' code highlighting
+
+%============================================%
+%==== TEXT STYLE COMMANDS AND SHORTCUTS =====%
+%============================================%
+\newcommand{\bksh}{\textbackslash}                           % quicker backslash 
+\newcommand{\keyw}[1]{\textcolor{dgreen}{\emph{#1}}}         % emphasized, green text
+\newcommand{\keytt}[1]{\textcolor{dgreen}{\texttt{#1}}}      % green, typewriter text 
+\newcommand{\keycmd}[1]{\texttt{\colorbox{light-gray}{#1}}}  % light grey highlighting
+
+%============================================%
+%==== LIST ENVIRONMENTS AND OPTIONS =========%
+%============================================%
+\newcommand{\sortitem}[1]{               % alphabetized list
+  \DTLnewrow{list}                       % Create a new entry
+  \DTLnewdbentry{list}{description}{#1}  % Add entry as description
+}
+\newenvironment{sortedlist}{
+  \DTLifdbexists{list}{\DTLcleardb{list}}{\DTLnewdb{list}}  % Create new/discard old list
+}{
+  \DTLsort{description}{list}            % Sort list
+  \begin{itemize}
+    \DTLforeach*{list}{\theDesc=description}{%
+      \item \theDesc}                    % Print each item
+  \end{itemize}
+}
+
+\newenvironment{faq}{\begin{description}[style=nextline]}{\end{description}}   % faq style list
